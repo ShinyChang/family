@@ -1,0 +1,21 @@
+.media-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.media-list:after {
+  content: '';
+  flex-grow: 999999999;
+}
+
+.media {
+  margin: 1px;
+  background-color: #ccc;
+  position: relative;
+}
+.media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  vertical-align: bottom;
+}
