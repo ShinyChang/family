@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react';
+import 'lazysizes';
 
+const transparent = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 const Media = ({ id, src, width, height }) => (
-  <div className='media' style={{width: width * 200 / height, flexGrow: width * 200 / height}}>
+  <div className='media' style={{width: width * 100 / height, flexGrow: width * 100 / height}}>
     <div style={{paddingBottom: (height / width * 100) + '%'}}></div>
-    <img src={src} alt=""/>
+    <img className="lazyload" src={transparent} data-src={src} alt=""/>
   </div>
 );
 
