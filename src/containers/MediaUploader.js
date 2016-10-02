@@ -3,7 +3,7 @@ import FileUploader from '../components/FileUploader';
 import { uploadFile } from '../actions';
 
 const mapStateToProps = (state) => ({
-  ...state.uploads
+  queue: state.uploads
 });
 
 const mapDispatchToProps =  ({

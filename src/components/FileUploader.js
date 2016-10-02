@@ -82,9 +82,9 @@ class FileUploader extends Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          {this.props.queue.map(o => <li>{o.name}</li>)}
+      <div className='file-uploader'>
+        <ul className='file-uploader__list'>
+          {this.props.queue.map((o) => <li key={o.id}>{o.name}</li>)}
         </ul>
         <input type='file' ref='file' accept='image/*, .mp4' multiple onChange={this.onChange.bind(this)}/>
       </div>

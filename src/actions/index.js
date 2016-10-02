@@ -23,19 +23,10 @@ export const fetchMedia = () => {
   };
 };
 
-export const getUploadUrl = (file) => {
-  return (dispatch) => {
-    return api.get('medias/upload_url', file).then(data => {
-
-    });
-  }
-}
-
 export const uploadFile = (file, meta) => {
   return (dispatch, getState) => {
     dispatch({type: 'UPLOAD_ADD', meta});
     const id = getState().uploads[0].id;
-
     return api.get('medias/upload_url', meta).then(data => {
       dispatch({type: 'UPLOAD_START', id});
       fetch(data.signedUrl, {method: 'PUT', body: file}).then(() => {
