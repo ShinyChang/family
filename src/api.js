@@ -10,7 +10,7 @@ function getOptions() {
     }
   };
   if (token) {
-    opt.Authorization = 'JWT  ' + token
+    opt.headers['Authorization'] = 'JWT  ' + token
   }
   return opt;
 };
